@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        CF_API   = 'https://api.cf.eu10.hana.ondemand.com'
+        CF_API   = 'https://api.cf.eu10-005.hana.ondemand.com'
         CF_ORG   = 'org-build-igen43-lab-inhouse-jv4r8a7p'
         CF_SPACE = 'bookshop-dev'
     }
