@@ -3,5 +3,4 @@ applications:
     memory: 512M
     random-route: true
 
-    services:
-      - iGen43PostgreSQL
+    
