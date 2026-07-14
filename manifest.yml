@@ -1,0 +1,6 @@
+applications:
+  - name: bookshop-srv
+    memory: 512M
+
+    services:
+      - iGen43PostgreSQL

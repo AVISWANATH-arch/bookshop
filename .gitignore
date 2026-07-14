@@ -1,0 +1,35 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# CAP
+gen/
+.sqlite
+*.db
+
+# Local environment
+.env
+default-env.json
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/crash.log
+
+# Build outputs
+dist/
+coverage/
