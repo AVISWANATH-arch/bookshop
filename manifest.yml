@@ -1,6 +1,7 @@
 applications:
   - name: bookshop-srv
     memory: 512M
+    random-route: true
 
     services:
       - iGen43PostgreSQL
