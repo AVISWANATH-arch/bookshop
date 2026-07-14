@@ -1,15 +1,30 @@
 {
+  "name": "bookshop-v2",
+  "version": "1.0.0",
+  "private": true,
+
+  "scripts": {
+    "start": "cds run"
+  },
+
+  "engines": {
+    "node": "22.x"
+  },
+
+  "dependencies": {
+    "@sap/cds": "^10",
+    "@cap-js/postgres": "^3"
+  },
+
+  "devDependencies": {
+    "@sap/cds-dk": "^10"
+  },
+
   "cds": {
     "requires": {
       "db": {
         "kind": "postgres"
       }
     }
-  },
-  "dependencies": {
-    "@cap-js/postgres": "^3"
-  },
-  "devDependencies": {
-    "@sap/cds-dk": "^10"
   }
 }
