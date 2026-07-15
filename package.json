@@ -3,25 +3,36 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-bookshopproject": "cds watch --open bookshopproject/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "engines": {
     "node": "22.x"
   },
   "dependencies": {
     "@cap-js/postgres": "^3",
+    "@cap-js/sqlite": "^3.0.2",
     "@sap/cds": "^10",
     "@sap/xssec": "^4.13.3"
   },
   "devDependencies": {
     "@sap/cds-dk": "^10",
-    "@sap/xssec": "^4.13.3"
+    "cds-plugin-ui5": "^0.17.0"
   },
   "cds": {
     "requires": {
       "db": {
-        "kind": "postgres"
+        "kind": "sqlite"
+      },
+      "auth": {
+        "kind": "mocked"
       }
     }
-  }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/bookshopproject"
+  ]
 }

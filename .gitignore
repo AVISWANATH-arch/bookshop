@@ -33,3 +33,5 @@ terraform/crash.log
 # Build outputs
 dist/
 coverage/
+
+db.sqlite
