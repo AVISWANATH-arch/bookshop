@@ -1,15 +1,17 @@
 _schema-version: 3.3.0
 ID: bookshop_v2
 version: 1.0.0
-description: "A simple CAP project."
+
 parameters:
   enable-parallel-deployments: true
+
 build-parameters:
   before-all:
     - builder: custom
       commands:
         - npm ci
         - npx cds build --production
+
 modules:
   - name: bookshop_v2-srv
     type: nodejs
@@ -19,29 +21,3 @@ modules:
       buildpack: nodejs_buildpack
     build-parameters:
       builder: npm-ci
-    provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
-        properties:
-          srv-url: ${default-url}
-    requires:
-      - name: bookshop_v2-postgres
-
-  - name: bookshop_v2-postgres-deployer
-    type: nodejs
-    path: gen/pg
-    parameters:
-      buildpack: nodejs_buildpack
-      no-route: true
-      no-start: true
-      tasks:
-        - name: deploy-to-postgresql
-          command: npm start
-    requires:
-      - name: bookshop_v2-postgres
-
-resources:
-  - name: bookshop_v2-postgres
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: postgresql-db
-      service-plan: development
